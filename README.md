@@ -97,15 +97,15 @@ api/
 - cd api
 
 ### 3. Instale as dependências
-npm install
+- npm install
 
 ### 4. Configure o arquivo .env
-DATABASE_URL="mysql://usuario:senha@localhost:3306/banco"
+- DATABASE_URL="mysql://usuario:senha@localhost:3306/banco"
 
 ### 5. Execute as migrations
-npx prisma migrate dev
+- npx prisma migrate dev
 
 ### 6. Inicie a API
-node src/server.js
+- node src/server.js
 
 ---

@@ -61,7 +61,6 @@ export async function deletarSetor(req, res, next) {
     try {
         const id = Number(req.params.id);
 
-        // regra de negócio (boa pra banca)
         const total = await prisma.patrimonio.count({
             where: { setorId: id },
         });

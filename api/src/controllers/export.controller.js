@@ -29,7 +29,6 @@ export async function exportSetoresExcel(req, res, next) {
             { header: "Criado em", key: "createdAt", width: 22 },
         ];
 
-        // cabeçalho em negrito
         ws.getRow(1).font = { bold: true };
 
         for (const s of setores) {
@@ -40,7 +39,6 @@ export async function exportSetoresExcel(req, res, next) {
             });
         }
 
-        // formatação de data
         ws.getColumn("createdAt").numFmt = "dd/mm/yyyy hh:mm";
 
         setDownloadHeaders(res, "setores.xlsx");

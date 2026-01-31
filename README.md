@@ -84,3 +84,22 @@ api/
 │  │  └─ patrimonio.routes.js
 │  ├─ app.js
 │  └─ server.js
+
+```
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/seu-repositorio.git
+
+# 2. Acesse a pasta da API
+cd api
+
+# 3. Instale as dependências
+npm install
+
+# 4. Configure o arquivo .env
+DATABASE_URL="mysql://usuario:senha@localhost:3306/banco"
+
+# 5. Execute as migrations
+npx prisma migrate dev
+
+# 6. Inicie a API
+node src/server.js

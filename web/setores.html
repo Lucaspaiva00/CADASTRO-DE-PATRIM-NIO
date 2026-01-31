@@ -12,41 +12,41 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container py-2">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <div class="brand-badge">CP</div>
-                <span>Cadastro de Patrimônio</span>
+    <header class="senai-topbar">
+        <div class="container">
+            <a class="senai-logo" href="index.html" aria-label="Início">
+                <img src="img/logo.png" alt="SENAI">
             </a>
-            <div class="ms-auto d-flex gap-2">
-                <a class="btn btn-outline-light" href="setores.html">Setores</a>
-                <a class="btn btn-outline-light" href="patrimonios.html">Patrimônios</a>
-            </div>
+
+            <nav class="senai-nav" aria-label="Navegação">
+                <a class="senai-link" href="setores.html">Setores</a>
+                <a class="senai-link" href="patrimonios.html">Patrimônios</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <div class="container my-4">
         <div class="card p-4">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
                 <div>
-                    <h4 class="mb-1">Setores</h4>
-                    <div class="text-muted">Cadastre, edite e exclua setores.</div>
+                    <h3 class="page-title">Setor</h3>
+                    <p class="page-subtitle">Cadastre, edite e exclua setores.</p>
                 </div>
 
                 <div class="d-flex gap-2">
                     <button class="btn btn-outline-light" id="btnExportExcel">Exportar Excel</button>
                     <button class="btn btn-brand" data-bs-toggle="modal" data-bs-target="#modalSetor" id="btnNovo">
-                        Novo Setor
+                        Adicionar Setor
                     </button>
                 </div>
             </div>
 
             <div class="row g-2 mb-3">
-                <div class="col-md-6">
-                    <input class="form-control" id="filtroNome" placeholder="Filtrar por nome (client-side)..." />
+                <div class="col-md-8">
+                    <input class="form-control" id="filtroNome" placeholder="Pesquisar setor..." />
                 </div>
-                <div class="col-md-6 d-flex justify-content-md-end">
-                    <button class="btn btn-outline-light" id="btnAtualizar">Atualizar</button>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-light w-100" id="btnAtualizar">Atualizar</button>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
                         <tr>
                             <th style="width:90px;">ID</th>
                             <th>Nome</th>
-                            <th style="width:210px;">Criado em</th>
+                            <th style="width:220px;">Criado em</th>
                             <th style="width:170px;">Ações</th>
                         </tr>
                     </thead>
@@ -64,31 +64,34 @@
                 </table>
             </div>
 
-            <div class="text-muted small" id="statusLinha"></div>
+            <div class="small-muted mt-3" id="statusLinha"></div>
         </div>
     </div>
 
     <!-- MODAL -->
     <div class="modal fade" id="modalSetor" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <form class="modal-content card" id="formSetor">
-                <div class="modal-header border-0">
+            <form class="modal-content" id="formSetor">
+                <div class="modal-header">
                     <h5 class="modal-title" id="modalTitulo">Novo Setor</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
+
                 <div class="modal-body">
                     <input type="hidden" id="setorId" />
 
                     <div class="mb-3">
-                        <label class="form-label">Nome do setor</label>
-                        <input class="form-control" id="nome" placeholder="Ex: TI, Financeiro..." required />
+                        <label class="form-label fw-bold">Nome do setor</label>
+                        <input class="form-control" id="nome" placeholder="Ex: Administrativo, Biblioteca..."
+                            required />
                     </div>
 
-                    <div class="text-muted small">
-                        * Operações são realizadas via API REST.
+                    <div class="small-muted">
+                        * Operações realizadas via API REST.
                     </div>
                 </div>
-                <div class="modal-footer border-0">
+
+                <div class="modal-footer">
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancelar</button>
                     <button class="btn btn-brand" type="submit" id="btnSalvar">Salvar</button>
                 </div>

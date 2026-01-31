@@ -12,41 +12,40 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container py-2">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <div class="brand-badge">CP</div>
-                <span>Cadastro de Patrimônio</span>
+    <header class="senai-topbar">
+        <div class="container">
+            <a class="senai-logo" href="index.html" aria-label="Início">
+                <img src="img/logo.png" alt="SENAI">
             </a>
 
-            <div class="ms-auto d-flex gap-2">
-                <a class="btn btn-outline-light" href="setores.html">Setores</a>
-                <a class="btn btn-brand" href="patrimonios.html">Patrimônios</a>
-            </div>
+            <nav class="senai-nav" aria-label="Navegação">
+                <a class="senai-link" href="setores.html">Setores</a>
+                <a class="senai-link" href="patrimonios.html">Patrimônios</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <div class="container my-4">
-        <div class="card p-4">
-            <h3 class="mb-1">Sistema Web – Cadastro de Patrimônio</h3>
-            <p class="text-muted mb-4">
+        <div class="card p-4 p-md-5">
+            <h2 class="page-title">Sistema Web – Cadastro de Patrimônio</h2>
+            <p class="page-subtitle">
                 CRUD completo de Setores e Patrimônios, relacionamento entre entidades e exportação para Excel.
             </p>
 
-            <div class="row g-3">
+            <div class="row g-4 mt-3">
                 <div class="col-md-6">
                     <div class="card p-4 h-100">
-                        <h5>Setores</h5>
-                        <p class="text-muted">Cadastre e gerencie os setores da empresa.</p>
-                        <a class="btn btn-outline-light mt-auto" href="setores.html">Ir para Setores</a>
+                        <h5 class="fw-bold mb-2">Setores</h5>
+                        <p class="text-secondary mb-4">Cadastre e gerencie os setores da empresa.</p>
+                        <a class="btn btn-outline-light" href="setores.html">Ir para Setores</a>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="card p-4 h-100">
-                        <h5>Patrimônios</h5>
-                        <p class="text-muted">Cadastre patrimônio vinculado a um setor e controle o status.</p>
-                        <a class="btn btn-brand mt-auto" href="patrimonios.html">Ir para Patrimônios</a>
+                        <h5 class="fw-bold mb-2">Patrimônios</h5>
+                        <p class="text-secondary mb-4">Cadastre patrimônio vinculado a um setor e controle o status.</p>
+                        <a class="btn btn-brand" href="patrimonios.html">Ir para Patrimônios</a>
                     </div>
                 </div>
             </div>
@@ -54,7 +53,6 @@
     </div>
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

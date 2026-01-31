@@ -12,31 +12,31 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container py-2">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <div class="brand-badge">CP</div>
-                <span>Cadastro de Patrimônio</span>
+    <header class="senai-topbar">
+        <div class="container">
+            <a class="senai-logo" href="index.html" aria-label="Início">
+                <img src="img/logo.png" alt="SENAI">
             </a>
-            <div class="ms-auto d-flex gap-2">
-                <a class="btn btn-outline-light" href="setores.html">Setores</a>
-                <a class="btn btn-outline-light" href="patrimonios.html">Patrimônios</a>
-            </div>
+
+            <nav class="senai-nav" aria-label="Navegação">
+                <a class="senai-link" href="setores.html">Setores</a>
+                <a class="senai-link" href="patrimonios.html">Patrimônios</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <div class="container my-4">
         <div class="card p-4">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-3">
                 <div>
-                    <h4 class="mb-1">Patrimônios</h4>
-                    <div class="text-muted">Cadastre patrimônio vinculado a um setor.</div>
+                    <h3 class="page-title">Patrimônio</h3>
+                    <p class="page-subtitle">Cadastre patrimônio vinculado a um setor.</p>
                 </div>
 
                 <div class="d-flex gap-2">
                     <button class="btn btn-outline-light" id="btnExportExcel">Exportar Excel</button>
                     <button class="btn btn-brand" data-bs-toggle="modal" data-bs-target="#modalPatrimonio" id="btnNovo">
-                        Novo Patrimônio
+                        Adicionar Patrimônio
                     </button>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         <option value="">Todos os setores</option>
                     </select>
                 </div>
-                <div class="col-md-3 d-flex justify-content-md-end">
+                <div class="col-md-3">
                     <button class="btn btn-outline-light w-100" id="btnAtualizar">Atualizar</button>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                             <th style="width:140px;">NI</th>
                             <th style="width:170px;">Setor</th>
                             <th style="width:150px;">Status</th>
-                            <th style="width:210px;">Criado em</th>
+                            <th style="width:220px;">Criado em</th>
                             <th style="width:170px;">Ações</th>
                         </tr>
                     </thead>
@@ -72,17 +72,17 @@
                 </table>
             </div>
 
-            <div class="text-muted small" id="statusLinha"></div>
+            <div class="small-muted mt-3" id="statusLinha"></div>
         </div>
     </div>
 
     <!-- MODAL -->
     <div class="modal fade" id="modalPatrimonio" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <form class="modal-content card" id="formPatrimonio">
-                <div class="modal-header border-0">
+            <form class="modal-content" id="formPatrimonio">
+                <div class="modal-header">
                     <h5 class="modal-title" id="modalTitulo">Novo Patrimônio</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
                 <div class="modal-body">
@@ -90,17 +90,18 @@
 
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label class="form-label">Nome</label>
-                            <input class="form-control" id="nome" placeholder="Ex: Notebook Dell" required />
+                            <label class="form-label fw-bold">Nome</label>
+                            <input class="form-control" id="nome" placeholder="Ex: Cadeira, Mesa, Computador..."
+                                required />
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">NI (único)</label>
-                            <input class="form-control" id="ni" placeholder="Ex: 000123" required />
+                            <label class="form-label fw-bold">NI (único)</label>
+                            <input class="form-control" id="ni" placeholder="Ex: 730547780" required />
                         </div>
 
                         <div class="col-md-3">
-                            <label class="form-label">Status</label>
+                            <label class="form-label fw-bold">Status</label>
                             <select class="form-select" id="status">
                                 <option value="ATIVO">ATIVO</option>
                                 <option value="MANUTENCAO">MANUTENÇÃO</option>
@@ -109,17 +110,17 @@
                         </div>
 
                         <div class="col-md-12">
-                            <label class="form-label">Setor</label>
+                            <label class="form-label fw-bold">Setor</label>
                             <select class="form-select" id="setorId" required></select>
                         </div>
                     </div>
 
-                    <div class="text-muted small mt-3">
+                    <div class="small-muted mt-3">
                         * Patrimônio possui relacionamento com Setor (chave estrangeira).
                     </div>
                 </div>
 
-                <div class="modal-footer border-0">
+                <div class="modal-footer">
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancelar</button>
                     <button class="btn btn-brand" type="submit">Salvar</button>
                 </div>

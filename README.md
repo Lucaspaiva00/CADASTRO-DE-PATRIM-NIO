@@ -207,7 +207,7 @@ Porta 3333 em uso: alterar a porta no server.js
 
 Erro ao rodar migrations: verificar permissões do usuário do banco
 
-📚 Objetivo Educacional
+## 📚 Objetivo Educacional
 
 Este projeto foi desenvolvido com foco educacional, permitindo a compreensão prática de:
 
@@ -221,6 +221,6 @@ Banco de dados relacional
 
 Boas práticas de desenvolvimento utilizadas no mercado
 
-✅ Considerações Finais
+## ✅ Considerações Finais
 
 O sistema atende integralmente aos requisitos da avaliação prática do SENAI, demonstrando domínio técnico, organização do código, clareza didática e aplicação prática de conceitos modernos de desenvolvimento web.

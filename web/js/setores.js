@@ -33,7 +33,6 @@ function render(setores) {
         tr.innerHTML = `
       <td>${s.setorid}</td>
       <td>${escapeHtml(s.nome)}</td>
-      <td>${formatDate(s.createdAt)}</td>
       <td class="d-flex gap-2">
         <button class="btn btn-sm btn-outline-light" data-action="edit" data-id="${s.setorid}">Editar</button>
         <button class="btn btn-sm btn-outline-danger" data-action="del" data-id="${s.setorid}">Excluir</button>

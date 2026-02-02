@@ -26,10 +26,10 @@ O projeto foi desenvolvido utilizando **API REST**, que é um dos padrões mais 
 
 ### O que isso significa?
 
-- O **Back-end** é responsável apenas por:
+- O **Back-end** é responsável por:
   - Regras de negócio
   - Acesso ao banco de dados
-  - Disponibilização de dados via HTTP
+  - Disponibilização de dados via HTTP (JSON)
 
 - O **Front-end** é responsável por:
   - Interface com o usuário
@@ -84,28 +84,3 @@ api/
 │  │  └─ patrimonio.routes.js
 │  ├─ app.js
 │  └─ server.js
-
-```
----
-
-## 🛠️ Como exercutar o projeto passo a passo
-
-### 1. Clone o repositório
-- git clone https://github.com/seu-usuario/seu-repositorio.gitdados
-
-### 2. Acesse a pasta da API
-- cd api
-
-### 3. Instale as dependências
-- npm install
-
-### 4. Configure o arquivo .env
-- DATABASE_URL="mysql://usuario:senha@localhost:3306/banco"
-
-### 5. Execute as migrations
-- npx prisma migrate dev
-
-### 6. Inicie a API
-- node src/server.js
-
----

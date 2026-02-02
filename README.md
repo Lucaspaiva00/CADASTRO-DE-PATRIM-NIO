@@ -151,8 +151,7 @@ Visual Studio Code (opcional)
 Extensão Live Server (para executar o front-end)
 
 ## 1️⃣ Clonar o Repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
+git clone https://github.com/Lucaspaiva00/CADASTRO-DE-PATRIM-NIO.git
 ## 2️⃣ Acessar a Pasta da API
 cd api
 

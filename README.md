@@ -84,3 +84,144 @@ api/
 │  │  └─ patrimonio.routes.js
 │  ├─ app.js
 │  └─ server.js
+
+Responsabilidade das Camadas
+
+routes/ → definição das rotas e métodos HTTP
+
+controllers/ → regras de negócio
+
+prisma/ → modelagem e persistência dos dados
+
+server.js → inicialização da API
+
+🗄️ Banco de Dados
+
+O banco de dados utilizado é MySQL, de modelo relacional, acessado por meio do Prisma ORM.
+
+Entidades do Sistema
+Setor
+
+id
+
+nome
+
+createdAt
+
+Patrimônio
+
+id
+
+nome
+
+NI (único)
+
+status (ENUM)
+
+setorId (chave estrangeira)
+
+createdAt
+
+Enum de Status do Patrimônio
+
+ATIVO
+
+MANUTENCAO
+
+BAIXADO
+
+O uso de ENUM garante padronização, controle e integridade dos dados.
+
+▶️ Como Executar o Projeto (Passo a Passo)
+
+Esta seção descreve como configurar e executar o projeto localmente, conforme solicitado pela banca avaliadora.
+
+🔧 Pré-requisitos
+
+Antes de iniciar, é necessário ter instalado:
+
+Node.js (versão LTS recomendada)
+
+MySQL
+
+Git
+
+Visual Studio Code (opcional)
+
+Extensão Live Server (para executar o front-end)
+
+1️⃣ Clonar o Repositório
+git clone https://github.com/seu-usuario/seu-repositorio.git
+
+2️⃣ Acessar a Pasta da API
+cd api
+
+3️⃣ Instalar as Dependências
+npm install
+
+4️⃣ Configurar o Arquivo .env
+
+Crie um arquivo .env dentro da pasta api/ com o seguinte conteúdo:
+
+DATABASE_URL="mysql://usuario:senha@localhost:3306/nome_do_banco"
+
+5️⃣ Criar as Tabelas no Banco de Dados
+npx prisma migrate dev
+
+6️⃣ Iniciar o Servidor Back-end
+node src/server.js
+
+
+A API estará disponível em:
+
+http://localhost:3333/api
+
+🌐 Executando o Front-end
+
+O front-end é estático e deve ser executado localmente.
+
+Abra a pasta web/ no VS Code
+
+Execute o arquivo index.html utilizando Live Server
+
+Páginas Disponíveis
+
+web/index.html
+
+web/setores.html
+
+web/patrimonios.html
+
+✅ Teste Rápido do Sistema
+
+Cadastre um Setor
+
+Cadastre um Patrimônio vinculado ao setor
+
+Utilize a opção Exportar Excel para gerar o relatório
+
+🧯 Possíveis Problemas
+
+Erro de conexão com banco: verificar se o MySQL está ativo e a DATABASE_URL correta
+
+Porta 3333 em uso: alterar a porta no server.js
+
+Erro ao rodar migrations: verificar permissões do usuário do banco
+
+📚 Objetivo Educacional
+
+Este projeto foi desenvolvido com foco educacional, permitindo a compreensão prática de:
+
+Sistemas Web
+
+Arquitetura API REST
+
+Separação de responsabilidades
+
+Banco de dados relacional
+
+Boas práticas de desenvolvimento utilizadas no mercado
+
+✅ Considerações Finais
+
+O sistema atende integralmente aos requisitos da avaliação prática do SENAI, demonstrando domínio técnico, organização do código, clareza didática e aplicação prática de conceitos modernos de desenvolvimento web.
